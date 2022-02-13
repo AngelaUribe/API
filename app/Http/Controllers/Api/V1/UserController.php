@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Resources\V1\PostResource;
+use App\Http\Resources\V1\UserResource;
+use App\Http\Resources\V1\CollectionResource;
 
-class PostController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return PostResource::collection(Post::paginate());
+        return (User::with('album')->latest()->paginate());
+
     }
 
     /**
@@ -33,22 +35,24 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(User $user)
     {
-        return new PostResource($post);
+        return new UserResource($user);
+
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -56,14 +60,11 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(User $user)
     {
-       $post->delete();
-       return response()->json([
-           'message' => 'Success'
-       ], 204);
+        //
     }
 }

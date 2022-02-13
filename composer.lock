@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65e85f9f959c0b087110331754d451cf",
+    "content-hash": "38ecba36207b02eb790c5fb1fe8698a1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5145,6 +5145,53 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "andyabih/json-to-laravel-migrations",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andyabih/json-to-laravel-migrations.git",
+                "reference": "4073ce57bd703e304c0b3c13cd5834475b61b62f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andyabih/json-to-laravel-migrations/zipball/4073ce57bd703e304c0b3c13cd5834475b61b62f",
+                "reference": "4073ce57bd703e304c0b3c13cd5834475b61b62f",
+                "shasum": ""
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Andyabih\\JsonToLaravelMigrations\\JsonToLaravelMigrationsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Andyabih\\JsonToLaravelMigrations\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Abi Haidar",
+                    "email": "andy@yllw.com"
+                }
+            ],
+            "description": "Turn a JSON schema into Laravel migrations.",
+            "support": {
+                "issues": "https://github.com/andyabih/json-to-laravel-migrations/issues",
+                "source": "https://github.com/andyabih/json-to-laravel-migrations/tree/1.0.0"
+            },
+            "time": "2021-03-21T21:26:18+00:00"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.4.0",

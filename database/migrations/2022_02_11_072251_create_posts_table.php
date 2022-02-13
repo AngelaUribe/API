@@ -18,9 +18,11 @@ return new class extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->string('title');
-            $table->string('slug')->unique();
-            $table->text('content');
-
+            $table->text('description');
+            $table->string('img');
+            $table->date('date');
+            $table->boolean('featured');
+            
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
