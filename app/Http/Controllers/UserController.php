@@ -10,7 +10,20 @@ class UserController extends Controller
     public function index()
     {
         return view('index', [
-           'users' => User::latest()->paginate()
-       ] );
+            'users'=> User::latest()->with('posts')->paginate()
+        ] );
+    }
+    public function main()
+    {
+        return view('main', [
+            'users'=> User::latest()->with('posts')->paginate()
+        ] );
+    }
+
+    public function indexjson()
+    {
+        return view('indexjson', [
+            'users'=> User::latest()->with('posts')->paginate()
+        ] );
     }
 }

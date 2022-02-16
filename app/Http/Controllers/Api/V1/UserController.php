@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Resources\V1\UserResource;
-use App\Http\Resources\V1\CollectionResource;
+use App\Http\Resources\V1\UserCollection;
 
 class UserController extends Controller
 {
@@ -17,8 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return (User::with('album')->latest()->paginate());
-
+        return User::latest()->with('posts')->paginate();
+        /* return UserCollection::collection(User::paginate()); */
     }
 
     /**
@@ -41,8 +41,6 @@ class UserController extends Controller
     public function show(User $user)
     {
         return new UserResource($user);
-
-
     }
 
     /**

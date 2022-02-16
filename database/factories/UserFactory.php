@@ -25,7 +25,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'phone'=> "555-555-5555",
             'bio' => $this->faker->text(250) ,
-            'profile_picture'=> "img/profile.jpg"
+            'profile_picture'=> "img/profile.jpeg"
         ];
     }
 

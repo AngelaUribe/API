@@ -1,0 +1,39 @@
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.card_img {
+    width: 100%;
+    overflow: hidden;
+    min-height: 250px;
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 100%;
+    color: white;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.content {
+    font-size: medium;
+    text-align: justify;
+    font-weight: lighter;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 0;
+    color: gray;
+}
+
+.contact {
+    font-weight: lighter;
+    margin-bottom: 0;
+    color: palevioletred
+}
